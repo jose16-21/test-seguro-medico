@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "segundoparcial.fullname" . }}
+  labels:
+    app: {{ template "segundoparcial.name" . }}
+    chart: {{ template "segundoparcial.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "segundoparcial.name" . }}
+    release: {{ .Release.Name }}
