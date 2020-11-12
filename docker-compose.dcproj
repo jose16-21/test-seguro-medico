@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>e1fac0ab-5e96-4c74-a62d-f6a43694d130</ProjectGuid>
+    <ProjectGuid>d1a409c9-e8bc-43f5-bf5e-4c7ba7502967</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/index.html</DockerServiceUrl>
     <DockerServiceName>segundoparcial</DockerServiceName>
