@@ -38,14 +38,14 @@ namespace SegundoParcial
                                                    .AllowAnyMethod();
                            });
             });
-            services.AddDbContext<AppDBContext>(Options => Options.UseSqlServer(@"Server=DESKTOP-IKGND98;Database=SegundoParcial;Integrated Security=True"));
+            services.AddDbContext<AppDBContext>(Options => Options.UseSqlServer(@"Server=DESKTOP-IKGND98\SQLEXPRESS01;Database=Proyecto;Integrated Security=True"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Segundo Parcial",
+                    Title = "Proyecto Final",
                     Description = "example",
                 });
             });

@@ -11,7 +11,7 @@ namespace SegundoParcial.Entities
         public int Boleta { get; set; }
         public int Anio { get; set; }
         public int Mes { get; set; }
-        public Guid TCPacienteId { get; set; }
+        public Guid PacienteId { get; set; }
         public DateTime FechaPago { get; set; }
         public decimal MontoPago { get; set; }        
         public string Estado { get; set; }

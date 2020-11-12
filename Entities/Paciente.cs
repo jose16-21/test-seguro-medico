@@ -8,7 +8,7 @@ namespace SegundoParcial.Entities
     public class Paciente
     {
         public Guid Id { get; set; }
-        public Guid TCPersonaId { get; set; }
+        public Guid PersonaId { get; set; }
         public int Codigo { get; set; }
         public int Telefono { get; set; }
         public DateTime FechaCobertura { get; set; }
