@@ -11,13 +11,17 @@ namespace SegundoParcial
 
         }
 
-        public DbSet<Persona> Persona { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("Final");
+        }
+        public DbSet<Persona> Persona { get; set; }        
+        public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Pagos> Pagos { get; set; }
+        public DbSet<Proveedor> Proveedor { get; set; }
+        public DbSet<Servicio> Servicio { get; set; }
+        public DbSet<ServicioPersona> ServicioPersona { get; set; }
 
-        public DbSet<SegundoParcial.Entities.Proveedor> Proveedor { get; set; }
-
-        public DbSet<SegundoParcial.Entities.Servicio> Servicio { get; set; }
-
-        public DbSet<SegundoParcial.Entities.ServicioPersona> ServicioPersona { get; set; }
 
     }
 }

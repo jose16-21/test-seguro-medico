@@ -7,10 +7,10 @@ namespace SegundoParcial.Entities
 {
     public class ServicioPersona
     {
-        public int id { get; set; }
-        public int PersonaId { get; set; }
-        public int ProveedorId { get; set; }
-        public int ServicioId { get; set; }
+        public Guid Id { get; set; }
+        public Guid PersonaId { get; set; }
+        public Guid ProveedorId { get; set; }
+        public Guid ServicioId { get; set; }
 
 
     }
