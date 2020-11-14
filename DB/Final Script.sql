@@ -114,3 +114,15 @@ GO
 
 ALTER TABLE Final.Factura
 ADD CONSTRAINT Factura_PacienteId_FK FOREIGN KEY (PacienteId) REFERENCES Final.Paciente(Id)
+
+GO
+
+CREATE TABLE Final.ReponseJava (
+Autorizacion int primary key identity,
+Mensage varchar(200),
+Estado varchar(200),
+Deducible Decimal(10,2),
+TotalAcumulado Decimal(10,2),
+Pendiente Decimal(10,2))
+
+GO

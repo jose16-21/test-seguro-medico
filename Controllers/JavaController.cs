@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SegundoParcial.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace SegundoParcial.Controllers
 {
     [Route("api/[controller]")]
-[ApiController]
-public class JavaController : ControllerBase
-{
+    [ApiController]
+    public class JavaController : ControllerBase
+    {
         private readonly AppDBContext _context;
 
         public JavaController(AppDBContext context)
@@ -20,25 +21,19 @@ public class JavaController : ControllerBase
         }
         // GET: api/Facturas/5
         [HttpGet("{Nit}/{Codigo}/{Nacimiento}/{Cobertura}")]
-        public  ReponseJava GetProveedor(string Nit, int Codigo, DateTime Nacimiento, DateTime Cobertura)
+        public ReponseJava GetProveedor(string Nit, int Codigo, DateTime Nacimiento, DateTime Cobertura)
         {
-            var Respuesta = new ReponseJava();
-            Respuesta.Autorizacion = 1;
-            Respuesta.Mensage = "Sin Cobertura";
+            var baseItem = _context.ReponseJava.FromSqlRaw("EXEC Final.ConsultaProveedor @codigo = {0} ,@nit = {1}, @nacimiento = {2}, @cobertura = {3}", Codigo, Nit, Nacimiento, Cobertura).ToList();
 
-            return  Respuesta;
+            return baseItem.First();
         }
 
-        [HttpGet("{Codigo}/{Cobertura}")]
-        public ReponseJava GetAfiliado(int Codigo, DateTime Cobertura)
+        [HttpGet("{Codigo}/{Nacimiento}")]
+        public ReponseJava GetAfiliado(int Codigo, DateTime Nacimiento)
         {
-            var Respuesta = new ReponseJava();
-            Respuesta.Estado = "Activo";
-            Respuesta.Deducible = 1500;
-            Respuesta.TotalAcumulado = 24389;
-            Respuesta.Pendiente = 870;
+            var baseItem = _context.ReponseJava.FromSqlRaw("EXEC Final.ConsultaAfiliado @codigo = {0} ,@nacimiento = {1}", Codigo, Nacimiento).ToList();
 
-            return Respuesta;
+            return baseItem.First();
         }
 
     }

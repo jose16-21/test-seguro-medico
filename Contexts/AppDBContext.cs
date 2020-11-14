@@ -21,7 +21,8 @@ namespace SegundoParcial
         public DbSet<Proveedor> Proveedor { get; set; }
         public DbSet<Servicio> Servicio { get; set; }
         public DbSet<ServicioPaciente> ServicioPaciente { get; set; }
-        public DbSet<SegundoParcial.Entities.Factura> Factura { get; set; }
+        public DbSet<Factura> Factura { get; set; }
+        public DbSet<ReponseJava> ReponseJava { get; set; }
 
 
     }
